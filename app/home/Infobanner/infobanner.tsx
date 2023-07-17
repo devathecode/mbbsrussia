@@ -2,7 +2,7 @@ import React from 'react';
 
 const Infobanner = () => {
     return (
-        <div className="w-full bg-purple-400 px-2 md:px-10 py-1.5 text-white sticky top-0">
+        <div className="w-full bg-purple-400 px-2 md:px-10 py-1.5 text-white sticky top-0 z-50">
             <div className="grid grid-cols-12">
                 <div className="col-span-6 place-self-start">
                     <a href="tel:+918178977881" className="flex bg-[#c13584] px-2 rounded-md">
