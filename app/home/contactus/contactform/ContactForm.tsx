@@ -1,12 +1,15 @@
 "use client";
 
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useRouter} from "next/navigation";
 import {useFormik} from "formik";
 import emailjs from '@emailjs/browser';
 import {contactUsSchema} from "@/app/home/schema";
+import axios from "axios";
+import {toast} from "react-toastify";
 
 const ContactForm = () => {
+    const [disableButton, setDisableButton] = useState(false);
     const initialValues = {
         firstName: "",
         lastName: "",
@@ -18,7 +21,17 @@ const ContactForm = () => {
         validationSchema: contactUsSchema,
         onSubmit: (values, action) => {
             setLoading(true);
-            console.log('values', values)
+            getData().then((res) =>{
+                console.log('huaa', res);
+                setLoading(false);
+                if(res){
+                    setDisableButton(res);
+                }
+                else{
+                    setDisableButton(false);
+                    toast.error('Please allow us some time, we have already received your request. We will try to get in touch with you asap.');
+                }
+            });
             // emailjs.sendForm('service_x5kkkwn', 'template_y4tprfd', form.current, '97zstD9nZbHoIhjlC')
             //     .then((result: any) => {
             //         setLoading(false);
@@ -27,7 +40,21 @@ const ContactForm = () => {
             //         console.error(error.text);
             //     });
         }
-    })
+    });
+    const getData = async () => {
+        const res = await axios.get("https://api.ipify.org/?format=json");
+        console.log('sessionStorage.getItem(\'IP\')', sessionStorage.getItem('IP'))
+        console.log('sessionStorage.getItem(\'IP\')', res.data.ip)
+        if(sessionStorage.getItem('IP')){
+            if(sessionStorage.getItem('IP') === res.data.ip){
+                return false
+            }
+        }
+        else{
+            sessionStorage.setItem('IP', res.data.ip);
+            return true
+        }
+    };
     const form: any = useRef();
     const navigate = useRouter();
     const [loading, setLoading] = useState(false);
@@ -66,11 +93,11 @@ const ContactForm = () => {
             <div className="col-span-12">
                 <button
                     type="submit"
-                    disabled={loading}
+                    disabled={loading || disableButton}
                     className={`uppercase text-sm font-bold tracking-wide bg-green-600 flex justify-center items-center
                                      hover:bg-green-700 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline ${loading && 'cursor-not-allowed'}`}>
                     {loading ? <div
-                        className="w-6 h-6 rounded-full animate-spin border-2 border-solid border-white border-t-transparent"></div> : 'Send Otp'}
+                        className="w-6 h-6 rounded-full animate-spin border-2 border-solid border-white border-t-transparent"></div> : 'Send'}
                 </button>
             </div>
         </form>

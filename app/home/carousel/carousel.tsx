@@ -6,12 +6,12 @@ const Carousel = () => {
     const images = [
         {
             id: 1,
-            imageUrl: '/mbbs.jpeg',
+            imageUrl: '/russia.jpeg',
             caption: ''
         },
         {
-            id: 1,
-            imageUrl: '/russia.jpeg',
+            id: 2,
+            imageUrl: '/mbbs.jpeg',
             caption: ''
         },
         {

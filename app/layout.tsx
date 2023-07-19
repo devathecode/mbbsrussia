@@ -1,6 +1,8 @@
 import './globals.css'
 import type {Metadata} from 'next'
 import {Montserrat} from 'next/font/google'
+import {ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const montSerrat = Montserrat({
     weight: ['600', '700'],
@@ -19,7 +21,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={montSerrat.className}>{children}</body>
+        <body className={montSerrat.className}>
+            {children}
+            <ToastContainer/>
+        </body>
         </html>
     )
 }
