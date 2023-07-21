@@ -44,19 +44,26 @@ const Carousel = () => {
                     />
                 ))}
                 <div
-                    className="absolute top-1/2 -mt-6 left-0 right-0 opacity-0 group-hover:opacity-100">
+                    className="absolute top-1/2 left-0 right-0 opacity-0 group-hover:opacity-100">
                     <button
                         onClick={prevImage}
-                        className="bg-gray-400 px-2 h-10 w-10 rounded-full text-2xl">
-                        {`<`}
+                        className="px-2 text-2xl rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="white"
+                             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
                     </button>
                 </div>
                 <div
-                    className="absolute top-1/2 -mt-6 right-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-700">
+                    className="absolute top-1/2 right-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-700">
                     <button
                         onClick={nextImage}
-                        className="bg-gray-400 px-2 h-10 w-10 rounded-full text-2xl">
-                        {`>`}
+                        className="px-2 text-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="white"
+                             strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+
                     </button>
                 </div>
             </div>

@@ -2,10 +2,10 @@ import React from 'react';
 
 const Infobanner = () => {
     return (
-        <div className="w-full bg-purple-400 px-2 md:px-10 py-1.5 text-white sticky top-0 z-50">
+        <div className="w-full bg-black shadow-lg px-2 md:px-10 py-1.5 text-white sticky top-0 z-50">
             <div className="grid grid-cols-12">
                 <div className="col-span-6 place-self-start">
-                    <a href="tel:+918178977881" className="flex bg-[#c13584] px-2 rounded-md">
+                    <a href="tel:+918178977881" className="flex bg-[#c13584]/80 px-2 rounded-md">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="my-auto h-4 w-4 mr-2 text-white">
                             <path d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,
                         7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,
@@ -16,7 +16,7 @@ const Infobanner = () => {
                 <div className="col-span-6 place-self-end my-auto">
                     <button
                         type="button"
-                        className="inline-block rounded-full p-1.5 text-xs font-medium uppercase leading-normal bg-[#c13584]
+                        className="inline-block rounded-full p-1.5 text-xs font-medium uppercase leading-normal bg-[#c13584]/80
                      text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const Infobanner = () => {
                     </button>
                     <button
                         type="button"
-                        className="ms-2 inline-block rounded-full p-1.5 text-xs font-medium uppercase leading-normal bg-[#c13584]
+                        className="ms-2 inline-block rounded-full p-1.5 text-xs font-medium uppercase leading-normal bg-[#c13584]/80
                      text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 512 512">
                             <path

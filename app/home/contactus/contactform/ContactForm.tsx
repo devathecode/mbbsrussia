@@ -94,8 +94,8 @@ const ContactForm = () => {
                 <button
                     type="submit"
                     disabled={loading || disableButton}
-                    className={`uppercase text-sm font-bold tracking-wide bg-green-600 flex justify-center items-center
-                                     hover:bg-green-700 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline ${loading && 'cursor-not-allowed'}`}>
+                    className={`uppercase text-sm font-bold tracking-wide bg-black/80 text-white flex justify-center items-center
+                                     hover:bg-black hover:text-white transition-all duration-500 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline ${loading && 'cursor-not-allowed'}`}>
                     {loading ? <div
                         className="w-6 h-6 rounded-full animate-spin border-2 border-solid border-white border-t-transparent"></div> : 'Send'}
                 </button>
