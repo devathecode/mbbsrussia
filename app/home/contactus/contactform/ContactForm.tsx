@@ -67,28 +67,28 @@ const ContactForm = () => {
                 <input type="text" className={inputClass} name="firstName" placeholder="Enter your first name"
                        value={values.firstName} onChange={handleChange} onBlur={handleBlur}/>
                 {errors.firstName && touched.firstName &&
-                    <p className="text-xs text-red-400 mt-1 capitalize">{errors.firstName}</p>}
+                    <p className="text-xs text-red-900 mt-1 capitalize">{errors.firstName}</p>}
             </div>
             <div className="col-span-12 sm:col-span-6">
                 <label htmlFor="lastName" className="leading-7 text-xs sm:text-sm">Last Name</label>
                 <input type="text" className={inputClass} name="lastName" placeholder="Enter your last name"
                        value={values.lastName} onChange={handleChange} onBlur={handleBlur}/>
                 {errors.lastName && touched.lastName &&
-                    <p className="text-xs text-red-400 mt-1 capitalize">{errors.lastName}</p>}
+                    <p className="text-xs text-red-900 mt-1 capitalize">{errors.lastName}</p>}
             </div>
             <div className="col-span-12">
                 <label htmlFor="phoneNumber" className="leading-7 text-xs sm:text-sm">Phone Number</label>
                 <input type="text" className={`${inputClass} invalid:border-red-700`} name="phoneNumber" placeholder="Enter your phone number"
                        value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur}/>
                 {errors.phoneNumber && touched.phoneNumber &&
-                    <p className="text-xs text-red-400 mt-1 capitalize">{errors.phoneNumber}</p>}
+                    <p className="text-xs text-red-900 mt-1 capitalize">{errors.phoneNumber}</p>}
             </div>
             <div className="col-span-12">
                 <label htmlFor="message" className="leading-7 text-xs sm:text-sm">Message</label>
                 <textarea className={inputClass} name="message" placeholder="Enter your message here"
                           value={values.message} onChange={handleChange} onBlur={handleBlur}/>
                 {errors.message && touched.message &&
-                    <p className="text-xs text-red-400 mt-1 capitalize">{errors.message}</p>}
+                    <p className="text-xs text-red-900 mt-1 capitalize">{errors.message}</p>}
             </div>
             <div className="col-span-12">
                 <button
